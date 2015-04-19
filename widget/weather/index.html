@@ -1,0 +1,105 @@
+<html>
+<head>
+<meta charset="utf-8">
+<link href="style.css" rel="stylesheet">
+</head>
+<body onload="opacity()">
+<div id="container">
+	<div class="border">
+		<!--div class="close">&#10005;</div>
+		<div class="minimize">&#150;</div-->
+		<div class="settings"><img src="settings.svg"></div>
+		<div class="sync"><img src="sync.svg"></div>
+	</div>
+	<div id="actualWeather">
+		<div id="city"><span></span></div>
+		<div id="code"></div>
+		<div class="details">
+			<div class="left" id="temperature"></div>
+			<div class="right">
+					<span id="windSpeed"></span> <span id="windUnit"></span><br>
+					<span id="humidity"></span>
+			</div>
+		</div>
+		<div class="week">
+			<div id="0">
+				<span class="day"></span>
+				<span class="code"></span>
+				<span class="temp"></span>
+			</div>
+			<div id="1">
+				<span class="day"></span>
+				<span class="code"></span>
+				<span class="temp"></span>
+			</div>
+			<div id="2">
+				<span class="day"></span>
+				<span class="code"></span>
+				<span class="temp"></span>
+			</div>
+			<div id="3">
+				<span class="day"></span>
+				<span class="code"></span>
+				<span class="temp"></span>
+			</div>
+			<div id="4">
+				<span class="day"></span>
+				<span class="code"></span>
+				<span class="temp"></span>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="locationModal">
+	<div class="credits">
+		<img src="back.svg">
+		<h1 style="text-align: center">Typhoon 0.8.94</h1>
+		<br>
+		<p>Typhoon is a simple weather application for Ubuntu. It is and always will be free.<br> 
+		<a href="https://github.com/apandada1/typhoon/">Source code</a> is released under <a href="http://www.gnu.org/licenses/gpl.html">GPL-3</a>.</p>
+		<li>Derived from <a href="http://getstormcloud.com/">Stormcloud</a> <a href="https://github.com/consindo/stormcloud/tree/e7ef8e131466d477075e92337e502c3cac004ee2">1.1</a> by<br> <a href="https://twitter.com/consindo">Jono Cooper</a>.</li>
+		<li>Currently developed and maintained by <a href="https://twitter.com/apandada1">Archisman Panigrahi</a>.</li>
+		<li>Icons (<a href="http://adamwhitcroft.com/climacons/">Climacons</a>) by <a href="https://twitter.com/AdamWhitcroft">Adam Whitcroft</a>.</li>
+		<li>Powered by <a href="http://weather.yahoo.com">Yahoo! Weather</a>.</li><br>
+		<h3>Contributors:</h3>
+		<li><a href="https://twitter.com/zdr0id">Zlatan Vasović</a></li>
+		<li>Esteban <a href="https://sites.google.com/site/typhoonweatherapp/help-and-how-to-1/howtomaketyphoonavailableineveryworkspace">(Found the way to make the app visible in every workspace)</a></li>
+		<br>
+		<h3 style="text-align: center">Thanks for using.</h3><br><br>
+	</div>
+	<div class="input">
+	<input type="text" placeholder="Location"><span class="loader"></span><br>
+	e.g Jakarta Indonesia, Tokyo<br>
+	<!--h4><a href="https://sites.google.com/site/typhoonweatherapp/support-1">SUPPORT</a></h4></span-->
+	</div><br>
+	<div class="full">
+		<div class="toggleswitch measurement">
+			<span data-type="c">R</span><span data-type="f">T</span><span data-type="k">K</span>
+		</div>
+		<div class="toggleswitch speed">
+			<span data-type="mph">mph</span><span data-type="kph">kph</span><span data-type="ms">m/s</span>
+		</div>
+		<div class="color">
+			<span data-color="gradient"></span>
+			<span data-color="575591"></span>
+			<span data-color="FF0097"></span>
+			<span data-color="00ABA9"></span>
+			<span data-color="8CBF26"></span>
+			<span data-color="A05000"></span>
+			<span data-color="333333"></span>
+			<span data-color="F09609"></span>
+		</div>
+		<br>
+		<a class="btn" tag="credits">CREDITS</a>
+	<br><br><br><br>
+	</div>
+</div>
+<div id="errorMessage">
+	Could not connect to internet.<br>
+	Check your internet connection.<br>
+	<button class="btn">TRY AGAIN</button>
+</div>
+<script src="jquery.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

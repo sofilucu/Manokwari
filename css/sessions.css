@@ -1,0 +1,78 @@
+#sessions {
+	width: 100%;
+	height: auto;
+	margin-top: 0;
+	box-shadow: 0 1px 0 rgba(255,255,255,.05) inset;
+	background-color: #1a1a1a;
+	color: #bbb;
+	text-align:center;
+	border-bottom-left-radius:2px;
+	border-bottom-right-radius:2px;
+}
+li {
+	display:inline-block;
+    border-radius: 4px;
+    margin: 8px;
+    position: relative;
+    left: 0px;
+    text-align:center;
+    border-radius: 50px;
+}
+li img {
+	width: 26px;
+	height: 26px;
+	margin: -6px -5px 0px -11px;
+	padding: 4px;
+	cursor:pointer;
+	border-radius: 50px;
+	background-color: #333;
+	/*-webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.4), 0 1px 2px rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 1px rgba(255, 255, 255, 0.4), 0 1px 2px rgba(0, 0, 0, 0.2);
+	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.12) 51%, rgba(0, 0, 0, 0.04));
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.12) 51%, rgba(0, 0, 0, 0.04));*/
+}
+li:hover img {
+	background-color: rgba(0, 0, 0, 0.2); 
+	/*-webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.4), 0 1px 2px rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 1px rgba(255, 255, 255, 0.4), 0 1px 2px rgba(0, 0, 0, 0.2);
+	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.12) 51%, rgba(0, 0, 0, 0.04));*/
+}
+li h2,
+li span {
+	display:none;
+	color: #bbb;
+	padding: 4px;
+}
+li:hover span, li:hover h2 {
+	content:"";
+	display:block;
+	position:fixed;
+	font-family: Cantarell;
+	text-align:left;
+	border-radius: 4px;
+	left:10px;
+}
+li:hover h2 {
+	margin: 50px 0 0;
+	font-size:1em;
+}
+li:hover span {
+	margin: 70px 0 0;
+	font-size:0.85em;
+}
+
+/***********************************
+ * Fonts Collections *
+ * *********************************/
+
+@font-face {
+    font-family: 'TrendexLightSSi.ttf';
+    src: url(../fonts/TrendexLightSSi.ttf);
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Aurulent Sans';
+    src: url(../fonts/AurulentSans-Regular.otf);
+    font-weight: 600;
+}

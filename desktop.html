@@ -1,0 +1,170 @@
+<html>
+<head>
+<meta charset="utf-8"><!-- this is weather meta -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+<link rel="stylesheet" href="css/desktop.css" />
+<link rel="stylesheet" href="css/bevel.css" />
+
+<script type="text/javascript" src="js/jq.js"></script>
+<script type="text/javascript" src="js/xml2json.js"></script>
+<script type="text/javascript" src="js/xml-background.js"></script>
+<script type="text/javascript" src="js/desktop.js"></script>
+<!-- this is extra bevel -->
+<script type="text/javascript" src="js/time.js"></script>
+<script type="text/javascript" src="js/moment.min.js"></script>
+<script type="text/javascript" src="js/bevel.js"></script>
+
+<link href="widget/weather/style.css" rel="stylesheet"><!-- this is extra weather -->
+
+</head>
+<body>
+  <div id="overlay"></div>
+  <div id="bg"></div>
+  <div id="base">
+    <!-- h1 id="debug"></h1 -->
+	<div id="launcher"></div>
+
+  <div id="bevel">
+	<!--div id="sosial_media">	<img src="img/bookmarks.svg" style="height: 24px; width:150px;"></div-->
+	<div id="sosial_media">Bookmarks</div>
+	<div class="sosmed">
+		<a onmousedown="return false" href="#" value="Sosmed1" onclick="Run1();" title="http://blankonlinux.or.id"><img src="img/blankon.svg"></a>
+		<a onmousedown="return false" href="#" value="Sosmed2" onclick="Run2();" title="http://panduan.blankonlinux.or.id"><img src="img/blankon-tutorial.svg"></a>
+		<a onmousedown="return false" href="#" value="Sosmed3" onclick="Run3();" title="http://facebook.com/blankonlinux"><img src="img/facebook.svg"></a>
+		<a onmousedown="return false" href="#" value="Sosmed4" onclick="Run4();" title="http://twitter.com/blankonlinux"><img src="img/twitter.svg"></a>
+	</div>
+	<div id="mocp">
+		<div class="header">Music Player</div>
+		<!--a href="#" value="" onclick="MocpOpen();" title="Open Audacious"><img src="img/music_player.svg" style="height: 24px; width: 150px; padding-top:5px;"></a>
+		</div-->
+		<div class="mocp">
+		<li onmousedown="return false" href="#" value="" onclick="MocpBackward();" title="Backward"><img src="img/icons/media-backward.svg"></li>
+		<li onmousedown="return false" href="#" value="" onclick="MocpPause();" title="Pause"><img src="img/icons/media-pause.svg"></li>
+		<li onmousedown="return false" href="#" value="" onclick="MocpPlay();" title="Play"><img src="img/icons/media-play.svg"></li>
+		<li onmousedown="return false" href="#" value="" onclick="MocpForward();" title="Forward"><img src="img/icons/media-forward.svg"></li>
+	</div>
+
+<div id="container">
+	<div id="tittle"><span>Weather</span></div>
+	<div class="border">
+		<!--div class="close">&#10005;</div>
+		<div class="minimize">&#150;</div-->
+		<div class="settings"><img src="widget/weather/settings.svg"></div>
+		<div class="sync"><img src="widget/weather/sync.svg"></div>
+	</div>
+	<div id="actualWeather">
+		<div id="city"><span></span></div>
+		<div id="code"></div>
+		<div class="details">
+			<div class="left" id="temperature"></div>
+			<div class="right">
+					<span id="windSpeed"></span><span id="windUnit"></span><br>
+					<span id="humidity"></span>
+			</div>
+		</div>
+		<div class="week">
+			<div id="0">
+				<span class="day"></span>
+				<span class="code"></span>
+				<span class="temp"></span>
+			</div>
+			<div id="1">
+				<span class="day"></span>
+				<span class="code"></span>
+				<span class="temp"></span>
+			</div>
+			<div id="2">
+				<span class="day"></span>
+				<span class="code"></span>
+				<span class="temp"></span>
+			</div>
+			<div id="3">
+				<span class="day"></span>
+				<span class="code"></span>
+				<span class="temp"></span>
+			</div>
+			<div id="4">
+				<span class="day"></span>
+				<span class="code"></span>
+				<span class="temp"></span>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="locationModal">
+	<div class="credits">
+		<img src="widget/weather/back.svg">
+		<h1 style="text-align: center">Typhoon 0.8.94</h1>
+		<br>
+		<p>Typhoon for BlankOn is a simple weather application for BlankOn Linux. It is and always will be free.<br> 
+		<a onclick="Run5();">Source code</a> is released under <a onclick="Run6();">GPL-3</a>.</p>
+		<li>Derived from <a onclick="Run7();">Stormcloud</a> <a onclick="Run8();">1.1</a> by<br> <a onclick="Run9();">Jono Cooper</a>.</li>
+		<li>Currently developed and maintained by <a onclick="Run10();">Archisman Panigrahi</a>.</li>
+		<li>Icons (<a onclick="Run11();">Climacons</a>) by <a onclick="Run12();">Adam Whitcroft</a>.</li>
+		<li>Powered by <a onclick="Run13();">Yahoo! Weather</a>.</li><br>
+		<h3>Contributors:</h3>
+		<li><a onclick="Run14();">Zlatan Vasović</a></li>
+		<li>Esteban <a onclick="Run15();">(Found the way to make the app visible in every workspace)</a></li>
+		<br>
+		<h3 style="text-align: center">Thanks for using.</h3><br><br>
+	</div>
+	<div class="input">
+	<input type="text" placeholder="Location"><span class="loader"></span><br>
+	e.g Jakarta Indonesia, Tokyo<br>
+	<!--h4><a href="https://sites.google.com/site/typhoonweatherapp/support-1">SUPPORT</a></h4></span-->
+	</div><br>
+	<div class="full">
+		<div class="toggleswitch measurement">
+			<span data-type="c">R</span><span data-type="f">T</span><span data-type="k">K</span>
+		</div>
+		<div class="toggleswitch speed">
+			<span data-type="mph">mph</span><span data-type="kph">kph</span><span data-type="ms">m/s</span>
+		</div>
+		<div class="color">
+			<span data-color="gradient"></span>
+			<span data-color="575591"></span>
+			<span data-color="FF0097"></span>
+			<span data-color="00224B"></span>
+			<span data-color="341F1F"></span>
+			<span data-color="A05000"></span>
+			<span data-color="003B00"></span>
+			<span data-color="111111"></span>
+		</div>
+		<br>
+		<a class="btn" tag="credits">CREDITS</a>
+		<br><br><br><br>
+	</div>
+	</div>
+	<div id="errorMessage">
+		Could not connect to internet.<br>
+		Check your internet connection.<br>
+		<button class="btn">TRY AGAIN</button>
+	</div>
+	<script src="widget/weather/jquery.min.js"></script>
+	<script src="widget/weather/script.js"></script>
+	
+<!-- System --->
+	<div id="system_settings"><!--img src="img/system.svg" style="height: 24px; width:150px;"-->System Settings</div>
+	<div class="system">
+		<li onmousedown="return false" href="#" value="" onclick="RunWallpaper()"><img src="img/icons/personalization_normal.png"><span>Wallpaper</span></li>
+		<li onmousedown="return false" href="#" value="" onclick="RunAccount()"><img src="img/icons/account_normal.png"><span>Account</span></li>
+		<li onmousedown="return false" href="#" value="" onclick="RunDate()"><img src="img/icons/date_time_normal.png"><span>Date/Time</span></li>
+		<li onmousedown="return false" href="#" value="" onclick="RunOnline()"><img src="img/icons/default_applications_normal.png"><span>Online</span></li>
+		<li onmousedown="return false" href="#" value="" onclick="RunRegional()"><img src="img/icons/network_normal.png"><span>Regional</span></li>
+		<li onmousedown="return false" href="#" value="" onclick="RunDisplay()"><img src="img/icons/display_normal.png"><span>Display</span></li>
+		<li onmousedown="return false" href="#" value="" onclick="RunNetwork()"><img src="img/icons/wireless.png"><span>Network</span></li>
+		<li onmousedown="return false" href="#" value="" onclick="RunKeyboard()"><img src="img/icons/keyboard_normal.png"><span>Keyboard</span></li>
+		<li onmousedown="return false" href="#" value="" onclick="RunMouse()"><img src="img/icons/mouse_normal.png"><span>Mouse</span></li>
+		<li onmousedown="return false" href="#" value="" onclick="RunSound()"><img src="img/icons/sound_normal.png"><span>Sound</span></li>
+		<li onmousedown="return false" href="#" value="" onclick="RunBluetooth()"><img src="img/icons/bluetooth_normal.png"><span>Bluetooth</span></li>
+		<li onmousedown="return false" href="#" value="" onclick="RunPower()"><img src="img/icons/power_normal.png"><span>Power</span></li>
+		<li onmousedown="return false" href="#" value="" onclick="RunInfo()"><img src="img/icons/system_info_normal.png"><span>Detail</span></li>
+		<li onmousedown="return false" href="#" value="" onclick="RunPrinter()"><img src="img/icons/printer.png"><span>Printer</span></li>
+		<li onmousedown="return false" href="#" value="" onclick="RunShare()"><img src="img/icons/share.png"><span>Sharing</span></li>
+	</div>
+
+	<div id="time" class="clock"><span id="clock-time">00:00</span><span id="clock-date">16 Juli 2013</span>
+	</div><!--Hover-->
+</body>
+</html>
